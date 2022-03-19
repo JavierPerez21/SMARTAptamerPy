@@ -1,4 +1,5 @@
 import os, sys
+import argparse
 from pyfastaq import sequences
 import re
 import random
@@ -37,6 +38,13 @@ def fastaq2txt(molecule='theophylline', indir=None, r='r1'):
                     fout.write(seq + "\n")
 
 if __name__ == "__main__":
-    molecule, r = sys.argv[1], sys.argv[2]
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--molecule', type=str, default="target",
+                        help='Molecule name to be used as target')
+    parser.add_argument('-r', '--r', type=str, default="R1",
+                        help='R1 for forward sequence R2 for comlementary')
+    args = parser.parse_args()
+    molecule = args.molecule
+    r = args.r
     indir = str(os.getcwd()) + "/data/{}_fastq_{}".format(molecule, r)
     fastaq2txt(molecule, indir=indir, r=r)

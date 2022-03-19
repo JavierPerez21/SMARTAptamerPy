@@ -12,11 +12,11 @@ if __name__ == "__main__":
                         help='threads (default: device CPU number)')
     parser.add_argument('-q', '--quantile', type=float, default=0.995,
                         help='the quantile that used to define the enriched k-mers (default: 0.995)')
-    parser.add_argument('-c', '--control', type=str, default='theo06',
+    parser.add_argument('-c', '--control', type=str, default='R0',
                         help='the control round (default R0)')
-    parser.add_argument('-f', '--list', type=str, default='data/theolist_cut_18.txt',
+    parser.add_argument('-f', '--list', type=str, default='data/targ_list_cut_?.txt',
                         help='library list (default list.txt)')
-    parser.add_argument('-i', '--input', type=str, default='data/theophylline_txt',
+    parser.add_argument('-i', '--input', type=str, default='data/target_txt',
                         help='input directory (default input)')
     parser.add_argument('-o', '--output', type=str, default="outputs",
                         help='output directory (default result)')
@@ -26,7 +26,7 @@ if __name__ == "__main__":
                         help='sequences with T bases > this cutoff are considered as t-rich sequences (0-1, default 0.6)')
     parser.add_argument('-n', '--seq_num', type=int, default=50000,
                         help='the total unique sequences should be left after filtering (set one between -s and -n, default 15000)')
-    parser.add_argument('-r', '--primer', type=str, default="data/primers_1.txt",
+    parser.add_argument('-r', '--primer', type=str, default="data/targ_primers.txt",
                         help='the primer file')
     parser.add_argument('-l', '--inflation', type=float, default=1.5,
                         help='inflation value for mcl algorithm (default 1.5)')

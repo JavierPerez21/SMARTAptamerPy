@@ -1,5 +1,6 @@
 import os, sys
 from pyfastaq import sequences
+import argparse
 import re
 import random
 
@@ -36,5 +37,13 @@ def cleanfastq(indir, outdir=None):
 
 
 if __name__ == "__main__":
-    indir = str(os.getcwd()) + "/data/theophylline_fastq_r2_bad"
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--molecule', type=str, default="target",
+                        help='Molecule name to be used as target')
+    parser.add_argument('-r', '--r', type=str, default="R1",
+                        help='R1 for forward sequence R2 for comlementary')
+    args = parser.parse_args()
+    molecule = args.molecule
+    r = args.r
+    indir = str(os.getcwd()) + f"/data/{molecule}_fastq_{r}"
     cleanfastq(indir)
