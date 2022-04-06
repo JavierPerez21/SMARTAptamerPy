@@ -16,11 +16,11 @@ The following programs are required to run this program:
 
 ## Instructions
 
-1. Install the dependencies listed above.
-2. Install libraries in requirements.txt
-3. Put fastq files for each round in data/targ_fastq_?
-4. Write name of each round file in data/targ_fastq_? in seperate lines without .fastq
-5. Write each primer in a separate line in data/targ_primers.txt
-6. Run fastqcleaner.py
-7. Run fastq2txt.py
-8. Run main.py
+1. Install the dependencies listed above. \*(for QGRS, we need clone their repo, build the code and then move the qgrs-cpp folder into the folder for this project)
+3. Install libraries in requirements.txt
+4. Put fastq files for each round in data/targ_fastq_?
+5. Write name of each round file in data/targ_fastq_? in seperate lines without .fastq
+6. Write each primer in a separate line in data/targ_primers.txt
+7. Run fastqcleaner.py
+8. Run fastq2txt.py
+9. Run main.py
